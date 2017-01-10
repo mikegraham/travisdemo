@@ -13,5 +13,8 @@ env:
 install: pip install -U tox
 language: python
 python: 2.7
-script: tox -e ${TOXENV}
+script: 
+    - python -c "import virtualenv; print virtualenv.__version__"
+    - python -c "import tox; print tox.__version__"
+    - tox -e ${TOXENV}
 #after_failure: "cat /home/travis/build/jsaponara/travisdemo/.tox/log/tox-0.log"
